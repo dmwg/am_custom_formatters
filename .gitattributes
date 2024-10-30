@@ -1,0 +1,48 @@
+# Auto detect text files and perform LF normalization
+*         text=auto
+
+# PHP files
+*.php     text eol=lf diff=php
+*.phpt    text eol=lf diff=php
+*.phtml   text eol=lf diff=html
+*.twig    text eol=lf
+*.phar    binary
+*.md       text diff=markdown
+
+# Graphics
+*.png      binary
+*.jpg      binary
+*.jpeg     binary
+*.gif      binary
+*.tif      binary
+*.tiff     binary
+*.ico      binary
+# SVG treated as text by default.
+*.svg      text
+# If you want to treat it as binary,
+# use the following line instead.
+# *.svg    binary
+*.eps      binary
+
+# Serialisation
+*.json     text
+*.toml     text
+*.xml      text
+*.yaml     text
+*.yml      text
+
+#
+# Exclude files from exporting
+#
+
+.gitattributes export-ignore
+.gitignore     export-ignore
+.gitkeep       export-ignore
+
+# Configuration
+phpcs.xml    text eol=lf
+phpunit.xml  text eol=lf
+phpstan.neon text eol=lf
+psalm.xml    text eol=lf
+
+/.github/ export-ignore

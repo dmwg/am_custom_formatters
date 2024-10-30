@@ -1,0 +1,5 @@
+name: 'Am custom formatters'
+type: module
+description: 'Custom formatters for our WissKI fields'
+package: '@todo Add package'
+core_version_requirement: ^10

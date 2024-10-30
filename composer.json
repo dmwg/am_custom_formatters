@@ -1,0 +1,86 @@
+{
+    "name": "dmwg/am_custom_formatters",
+    "version": "1.0.0",
+    "description": "Custom formatters for our fields.",
+    "homepage": "https://github.com/dmwg/am_custom_formatters",
+    "license": "GPL-2.0-or-later",
+    "type": "drupal-module",
+    "authors": [
+        {
+            "name": "Oliver Baumann",
+            "email": "oliver.baumann@uni-bayreuth.de",
+            "homepage": "https://www.dmwg.uni-bayreuth.de/en/index.html",
+            "role": "maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/dmwg/am_custom_formatters/issues",
+        "source": "https://github.com/dmwg/am_custom_formatters.git"
+    },
+    "require": {
+        "php": ">=8.2",
+        "drupal/core": "^9.3"
+    },
+    "require-dev": {
+        "drupal/core-dev": "^9.3",
+        "drush/drush": "^11",
+        "drupal/coder": "^8.3",
+        "ergebnis/composer-normalize": "^2.44",
+        "mglaman/phpstan-drupal": "^1.2",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^1.12",
+        "phpstan/phpstan-deprecation-rules": "^1.2",
+        "thecodingmachine/phpstan-strict-rules": "^1.0"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8",
+            "exclude": ["mglaman/phpstan-drupal"]
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Drupal\\am_custom_formatters\\": "src/"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "8.2"
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "scripts": {
+        "codingstyle": [
+            "@composer install",
+            "vendor/bin/phpcs -v --colors --no-cache -ps -w --standard=Drupal src"
+        ],
+        "codingstyle-fix": [
+            "@composer install",
+            "vendor/bin/phpcbf -v -w -p --standard=Drupal src"
+        ],
+        "phpstan": [
+            "@composer install",
+            "./vendor/bin/phpstan analyze --configuration=phpstan.neon -vvv --ansi"
+        ]
+    },
+    "scripts-descriptions": {
+        "codingstyle": "Detect violations of coding style with phpcs",
+        "codingstyle-fix": "Attempt to auto-fix violations of coding style with phpcbf",
+        "phpstan": "Run phpstan on the codebase, as configured in phpstan.neon"
+    },
+    "scripts-aliases": {
+        "codingstyle": ["cs", "style"],
+        "codingstyle-fix": ["fix", "csfix", "stylefix"],
+        "phpstan": ["stan"]
+    }
+}

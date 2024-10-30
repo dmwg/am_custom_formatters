@@ -1,0 +1,15 @@
+<?php
+/**
+ * Implements hook_theme().
+ * @return array<mixed> The render array
+ * */
+function am_custom_formatters_theme(): array
+{
+    return array(
+    'am_custom_formatters' => array(
+        'variables' => [
+    'url' => null,
+        ],
+    ),
+    );
+}

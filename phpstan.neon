@@ -1,0 +1,5 @@
+parameters:
+    level: 6
+    paths:
+        - src
+        - ./am_custom_formatters.module

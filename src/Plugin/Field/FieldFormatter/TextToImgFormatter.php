@@ -15,11 +15,11 @@ use Drupal\Core\StringTranslation\TranslatableMarkup;
  * Takes the URI of an image, and wraps it in an img-tag.
  */
 #[FieldFormatter(
-  id: 'am_custom_formatters_text_to_img',
-  label: new TranslatableMarkup('AM: plain to IMG'),
-  field_types: [
-    'string',
-  ],
+    id: 'am_custom_formatters_text_to_img',
+    label: new TranslatableMarkup('AM: plain to IMG'),
+    field_types: [
+      'string',
+    ],
 )]
 final class TextToImgFormatter extends FormatterBase {
 

@@ -1,6 +1,6 @@
 {
     "name": "dmwg/am_custom_formatters",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Custom formatters for our fields.",
     "homepage": "https://github.com/dmwg/am_custom_formatters",
     "license": "GPL-2.0-or-later",
@@ -40,11 +40,6 @@
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "autoload": {
-        "psr-4": {
-            "Drupal\\am_custom_formatters\\": "src/"
-        }
-    },
     "config": {
         "platform": {
             "php": "8.2"

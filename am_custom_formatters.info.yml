@@ -1,5 +1,5 @@
 name: 'Am custom formatters'
 type: module
 description: 'Custom formatters for our WissKI fields'
-package: '@todo Add package'
+package: 'AM Extensions'
 core_version_requirement: ^10

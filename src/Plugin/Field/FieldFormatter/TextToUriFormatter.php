@@ -19,12 +19,12 @@ use Drupal\Core\Url;
  * takes a URI provided by a plain text field, and wraps it in an anchor-tag.
  */
 #[FieldFormatter(
-  id: 'am_custom_formatters_text_to_uri',
-  label: new TranslatableMarkup('AM: plain to link'),
-  field_types: [
-    'uri',
-    'string',
-  ],
+    id: 'am_custom_formatters_text_to_uri',
+    label: new TranslatableMarkup('AM: plain to link'),
+    field_types: [
+      'uri',
+      'string',
+    ],
 )]
 final class TextToUriFormatter extends FormatterBase {
 
@@ -35,13 +35,22 @@ final class TextToUriFormatter extends FormatterBase {
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      if (!$item->isEmpty()) {
+      if ($item->isEmpty()) {
+        continue;
+      }
+
+      if (str_starts_with($item->value, 'http://') || str_starts_with($item->value, 'https://')) {
         $elements[$delta] = [
           '#type' => 'link',
           '#url' => Url::fromUri($item->value),
           '#title' => $item->value,
         ];
+        continue;
       }
+
+      $elements[$delta] = [
+        '#plain_text' => $item->value,
+      ];
     }
 
     return $elements;

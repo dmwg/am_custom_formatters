@@ -1,6 +1,6 @@
 {
     "name": "dmwg/am_custom_formatters",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "description": "Custom formatters for our fields.",
     "homepage": "https://github.com/dmwg/am_custom_formatters",
     "license": "GPL-2.0-or-later",
@@ -42,7 +42,7 @@
     "prefer-stable": true,
     "config": {
         "platform": {
-            "php": "8.2"
+            "php": "8.3"
         },
         "optimize-autoloader": true,
         "preferred-install": "dist",
